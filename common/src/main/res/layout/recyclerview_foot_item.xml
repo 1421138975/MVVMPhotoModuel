@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="state"
+            type="java.lang.String" />
+
+        <import type="com.dfzt.common.constant.Constant"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="@{(state.equals(Constant.LOADING_FINISH)) ? true : false}"/>
+
+        <!-- 加载的布局 -->
+        <include
+            android:id="@+id/loading_layout"
+            layout="@layout/loading_layout"
+            android:visibility="@{(state.equals(Constant.LOADING_STATE)) ? true : false}"/>
+
+        <!-- 加载到底部的布局 -->
+        <include
+            android:id="@+id/load_end_layout"
+            layout="@layout/load_end_layout"
+            android:visibility="@{state.equals(Constant.LOADING_END) ? true : false}"/>
+
+        <!-- 加载失败的布局 -->
+        <include
+            android:id="@+id/load_error_layout"
+            layout="@layout/load_error_layout"
+            android:visibility="@{state.equals(Constant.LOADING_ERROR) ? true : false}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

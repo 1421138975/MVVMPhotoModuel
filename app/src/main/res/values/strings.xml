@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MVVMPhotoActivity</string>
+    <string name="home_name">MVVM项目</string>
 </resources>
