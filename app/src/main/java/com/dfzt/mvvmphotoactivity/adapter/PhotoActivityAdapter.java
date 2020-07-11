@@ -43,7 +43,6 @@ public class PhotoActivityAdapter extends RecyclerView.Adapter<BaseViewHolder<Ph
 
     @Override
     public void onBindViewHolder(@NonNull BaseViewHolder<PhotoBean.ResultsBean, PhotoActivityItemBinding> holder, int position) {
-
         holder.getDataBinding().setPhotoModel(mList.get(position));
         holder.bind();
     }

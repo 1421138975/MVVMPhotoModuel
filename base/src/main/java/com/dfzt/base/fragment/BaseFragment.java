@@ -29,6 +29,11 @@ public abstract class BaseFragment<V extends ViewDataBinding> extends Fragment {
         return mDataBinding.getRoot();
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initData();
+    }
 
     //获取布局文件的方法
     @LayoutRes
@@ -39,7 +44,12 @@ public abstract class BaseFragment<V extends ViewDataBinding> extends Fragment {
      * @param index 下标 从1开始
      * @param data 修改的javaBean的类型
      */
-    protected <T> void changeData(int index,T data){
+    /*protected <T> void changeData(int index,T data){
         mDataBinding.setVariable(index,data);
+    }*/
+
+
+    protected void initData(){
+
     }
 }

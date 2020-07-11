@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.billy.cc.core.component.CC;
 import com.dfzt.base.activity.BaseActivity;
 import com.dfzt.base.util.StatusBarUtil;
 import com.dfzt.mvvmphotoactivity.R;
@@ -18,6 +19,12 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     }
 
     @Override
+    protected void initStatusBar() {
+        //super.initStatusBar();
+        StatusBarUtil.setColor(this,getResources().getColor(R.color.colorAccent),0);
+    }
+
+    @Override
     protected void initData() {
         super.initData();
         mDataBinding.ccBtn.setOnClickListener(new View.OnClickListener() {
@@ -29,15 +36,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         mDataBinding.gankioBtn.setOnClickListener(v->{
             startActivity(new Intent(mContext, PhotoActivity.class));
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mDataBinding.ccBtn.post(()->{
-            ViewGroup.LayoutParams params = mDataBinding.statusBar.getLayoutParams();
-            params.height = StatusBarUtil.getStatusBarHeight(mContext);
-            mDataBinding.statusBar.setLayoutParams(params);
+        mDataBinding.ccBtn.setOnClickListener( v->{
+            CC.obtainBuilder("TabActivity").setActionName("showActivity").build().call();
         });
     }
+
 }

@@ -49,7 +49,8 @@ public abstract class BaseActivity<V extends ViewDataBinding> extends AppCompatA
         mDataBinding.setVariable(index,data);
     }
 
-    private void initStatusBar() {
+    protected void initStatusBar() {
+        //默认是全透明
         StatusBarUtil.setTranslucentForImageViewInFragment(this,0,null);
     }
 

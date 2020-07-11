@@ -10,20 +10,13 @@
         tools:context=".ui.photoactivity.PhotoActivity">
 
 
-        <View
-            android:id="@+id/status_bar"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_1"
-            android:background="@color/colorAccent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
             android:background="@color/colorAccent"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/status_bar"
+            app:layout_constraintTop_toTopOf="parent"
             android:textColor="@color/white"
             android:text="图片"/>
 

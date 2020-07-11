@@ -13,6 +13,8 @@ import com.dfzt.mvvmphotoactivity.adapter.PhotoActivityAdapterLoad;
 import com.dfzt.mvvmphotoactivity.bean.PhotoBean;
 import com.dfzt.mvvmphotoactivity.databinding.ActivityPhotoBinding;
 
+import org.hamcrest.internal.ArrayIterator;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +28,12 @@ public class PhotoActivity extends BaseMvvmActivity<ActivityPhotoBinding, PhotoA
     @Override
     protected int getLayoutId() {
         return R.layout.activity_photo;
+    }
+
+    @Override
+    protected void initStatusBar() {
+        //super.initStatusBar();
+        StatusBarUtil.setColor(this,getResources().getColor(R.color.colorAccent),0);
     }
 
     @Override
@@ -46,9 +54,11 @@ public class PhotoActivity extends BaseMvvmActivity<ActivityPhotoBinding, PhotoA
         mList.addAll(photos);
         mAdapter.setList(mList);
         mAdapter.setLoadState(Constant.LOADING_FINISH);
-        for (PhotoBean.ResultsBean bean : mList) {
-            Log.e("PPS","utl = " + bean.getUrl());
-        }
+        /*//通过ArrayList中的迭代器来遍历
+        ArrayIterator iterator = new ArrayIterator(mList);
+        while (iterator.hasNext()){
+            Log.e("PPS",((PhotoBean.ResultsBean)iterator.next()).getUrl());
+        }*/
         mDataBinding.refreshLayout.setRefreshing(false);
         showContent();
     }
@@ -99,13 +109,4 @@ public class PhotoActivity extends BaseMvvmActivity<ActivityPhotoBinding, PhotoA
         });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mDataBinding.title.post(()->{
-            ViewGroup.LayoutParams params = mDataBinding.statusBar.getLayoutParams();
-            params.height = StatusBarUtil.getStatusBarHeight(mContext);
-            mDataBinding.statusBar.setLayoutParams(params);
-        });
-    }
 }
