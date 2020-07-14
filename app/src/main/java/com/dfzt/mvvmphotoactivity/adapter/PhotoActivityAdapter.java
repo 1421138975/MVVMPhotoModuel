@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * 这个adpter 不做上拉更多功能
  *
  */
-public class PhotoActivityAdapter extends RecyclerView.Adapter<BaseViewHolder<PhotoBean.ResultsBean, PhotoActivityItemBinding>> {
+public class PhotoActivityAdapter extends RecyclerView.Adapter<BaseViewHolder<PhotoActivityItemBinding>> {
 
     private Context mContext;
     private List<PhotoBean.ResultsBean> mList;
@@ -36,13 +36,13 @@ public class PhotoActivityAdapter extends RecyclerView.Adapter<BaseViewHolder<Ph
 
     @NonNull
     @Override
-    public BaseViewHolder<PhotoBean.ResultsBean, PhotoActivityItemBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BaseViewHolder<PhotoActivityItemBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ViewDataBinding binding = DataBindingUtil.inflate(LayoutInflater.from(mContext), R.layout.photo_activity_item, parent, false);
         return new BaseViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BaseViewHolder<PhotoBean.ResultsBean, PhotoActivityItemBinding> holder, int position) {
+    public void onBindViewHolder(@NonNull BaseViewHolder<PhotoActivityItemBinding> holder, int position) {
         holder.getDataBinding().setPhotoModel(mList.get(position));
         holder.bind();
     }

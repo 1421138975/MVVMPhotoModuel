@@ -40,14 +40,6 @@ public abstract class BaseActivity<V extends ViewDataBinding> extends AppCompatA
     @LayoutRes
     protected abstract int getLayoutId();
 
-    /**
-     * 这个是用来修改数据的
-     * @param index 下标 从1开始
-     * @param data 修改的javaBean的类型
-     */
-    protected <T> void changeData(int index,T data){
-        mDataBinding.setVariable(index,data);
-    }
 
     protected void initStatusBar() {
         //默认是全透明

@@ -65,11 +65,11 @@ public class PhotoActivityAdapterLoad extends RecyclerView.Adapter<BaseViewHolde
         if (viewType == CONTENT_ITEM) {
             PhotoActivityItem2Binding mContentBinding = DataBindingUtil.inflate(LayoutInflater.from(mContext),
                     R.layout.photo_activity_item2, parent, false);
-            return new BaseViewHolder<PhotoBean.ResultsBean,PhotoActivityItem2Binding>(mContentBinding);
+            return new BaseViewHolder<PhotoActivityItem2Binding>(mContentBinding);
         }else{
             RecyclerviewFootItemBinding mFootBinding = DataBindingUtil.inflate(LayoutInflater.from(mContext),
                     R.layout.recyclerview_foot_item, parent, false);
-            return new BaseViewHolder<String,RecyclerviewFootItemBinding>(mFootBinding);
+            return new BaseViewHolder<RecyclerviewFootItemBinding>(mFootBinding);
         }
     }
 

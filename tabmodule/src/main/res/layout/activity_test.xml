@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.dfzt.tabmodule.widget.out.MySwipeRefreshLayout
+    <com.dfzt.tabmodule.widget.in.MySwipeRefreshLayout2
         android:id="@+id/refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.dfzt.tabmodule.widget.in.MyConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingLeft="@dimen/dp_5"
@@ -42,21 +42,21 @@
                 android:padding="@dimen/dp_10"/>
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <com.dfzt.tabmodule.widget.in.MyConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toBottomOf="@id/login_icon"
                 app:layout_constraintBottom_toBottomOf="parent">
 
 
-                <com.dfzt.tabmodule.widget.MyNestedScrollView
+                <com.dfzt.tabmodule.widget.in.MyInNestedScrollView
                     android:id="@+id/nest_scrollview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:overScrollMode="never"
                     android:orientation="vertical">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <com.dfzt.tabmodule.widget.in.MyConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -65,7 +65,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_40"
                             android:background="@drawable/hint_text_bg"
-                            android:text="外部拦截法"
+                            android:text="内部拦截法"
                             android:layout_marginTop="@dimen/dp_10"
                             android:gravity="center_vertical"
                             android:paddingLeft="@dimen/dp_10"
@@ -82,19 +82,19 @@
                             android:layout_marginTop="@dimen/dp_10"
                             />
 
-                        <com.dfzt.tabmodule.widget.out.MyViewpager
+                        <com.dfzt.tabmodule.widget.in.MyViewpager2
                             android:id="@+id/viewpager"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:layout_constraintTop_toBottomOf="@id/tablayout"
                             />
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.dfzt.tabmodule.widget.in.MyConstraintLayout>
 
-                </com.dfzt.tabmodule.widget.MyNestedScrollView>
+                </com.dfzt.tabmodule.widget.in.MyInNestedScrollView>
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.dfzt.tabmodule.widget.in.MyConstraintLayout>
 
             <TextView
                 android:id="@+id/hint_text2"
@@ -109,9 +109,9 @@
                 android:textSize="@dimen/sp_18"
                 app:layout_constraintTop_toBottomOf="@id/message_icon"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.dfzt.tabmodule.widget.in.MyConstraintLayout>
 
 
-    </com.dfzt.tabmodule.widget.out.MySwipeRefreshLayout>
+    </com.dfzt.tabmodule.widget.in.MySwipeRefreshLayout2>
 
 </layout>

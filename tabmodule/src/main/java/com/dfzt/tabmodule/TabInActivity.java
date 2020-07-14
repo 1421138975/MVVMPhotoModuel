@@ -1,20 +1,9 @@
 package com.dfzt.tabmodule;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.NestedScrollView;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
-import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -24,35 +13,42 @@ import android.view.animation.LinearInterpolator;
 
 import com.dfzt.base.activity.BaseActivity;
 import com.dfzt.base.util.StatusBarUtil;
-import com.dfzt.tabmodule.databinding.ActivityTabBinding;
+import com.dfzt.tabmodule.databinding.ActivityTestBinding;
 import com.dfzt.tabmodule.fragment.TabFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 /**
- *
- * 这里面有一个 SwipeRefreshLayout + Viewpager的滑动冲突
- * 这里使用的是外部拦截法来解决这bug
+ *这个使用内部拦截法来解决bug （未解决）
  *
  */
-public class TabActivity extends BaseActivity<ActivityTabBinding> {
+public class TabInActivity extends BaseActivity<ActivityTestBinding> {
+
 
     private String [] titles = {"标签一","标签二","标签三","标签四"};
     private List<Fragment> mFragments = new ArrayList<>();
     private int mHeight = 0;//搜你想搜需要移动的高度
     private int mHintWidth = 0;//搜你想搜的控件宽度
     private int mScaleWidth = 0;//宽度缩小的距离的最大值
+
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_tab;
+        return R.layout.activity_test;
     }
 
     //重载沉浸式状态栏的方法
     @Override
     protected void initStatusBar() {
         //super.initStatusBar();
-        StatusBarUtil.setColor(this,getResources().getColor(R.color.colorAccent),100);
+        StatusBarUtil.setColor(this,getResources().getColor(R.color.colorAccent),0);
     }
 
     @Override
@@ -69,35 +65,6 @@ public class TabActivity extends BaseActivity<ActivityTabBinding> {
 
     private void initScrollListener() {
 
-
-        mDataBinding.topIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mHintTextAnim(0 );
-            }
-        });
-
-        mDataBinding.loginIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mHintTextAnim2(0);
-            }
-        });
-
-        mDataBinding.messageIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mTranslationAnim(50,true);
-                //mHandler.sendEmptyMessageAtTime(0x123,10);
-            }
-        });
-
-        mDataBinding.hintText2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(mContext,TabInActivity.class));
-            }
-        });
 
         //设置滑动的监听事件
         mDataBinding.nestScrollview.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
@@ -216,64 +183,6 @@ public class TabActivity extends BaseActivity<ActivityTabBinding> {
         }
         Log.e("PPS"," alpha " + alpha);
         mDataBinding.topIcon.setAlpha(alpha);
-    }
-
-    private void mHintTextAnim(int dy){
-
-        AnimatorSet animatorSet = new AnimatorSet();
-        Log.e("PPS"," Y " + mDataBinding.hintText2.getY());
-        Log.e("PPS"," Y " +  mDataBinding.topIcon.getY());
-        ObjectAnimator mTranslation = ObjectAnimator.ofFloat(
-                mDataBinding.hintText2,"translationY",
-                0,
-                -100);
-        //mTranslation.setInterpolator(new LinearInterpolator());
-        mTranslation.setRepeatCount(0);
-        mTranslation.setRepeatMode(ValueAnimator.RESTART);
-
-        ObjectAnimator mScaleX = ObjectAnimator.ofFloat(
-                mDataBinding.hintText2,"scaleX",
-                1f,
-                0.58f);
-        mDataBinding.hintText2.setPivotX(0);//设置指定旋转中心点X坐标
-        mDataBinding.hintText2.setPivotY(0);//设置指定旋转中心点X坐标
-        //mScaleX.setInterpolator(new LinearInterpolator());
-        mScaleX.setDuration(500);
-        mScaleX.setRepeatCount(0);
-        mScaleX.setRepeatMode(ValueAnimator.RESTART);
-
-        animatorSet.setInterpolator(new LinearInterpolator());
-        animatorSet.playTogether(mTranslation,mScaleX);
-        animatorSet.setDuration(2000);
-        animatorSet.start();
-    }
-
-
-    private void mHintTextAnim2(int dy){
-
-        AnimatorSet animatorSet = new AnimatorSet();
-        Log.e("PPS"," Y " + mDataBinding.hintText2.getY());
-        Log.e("PPS"," Y " +  mDataBinding.topIcon.getY());
-        ObjectAnimator mTranslation = ObjectAnimator.ofFloat(
-                mDataBinding.hintText2,"translationY",
-                -100,
-                0);
-        mTranslation.setRepeatCount(0);
-        mTranslation.setRepeatMode(ValueAnimator.RESTART);
-
-        ObjectAnimator mScaleX = ObjectAnimator.ofFloat(
-                mDataBinding.hintText2,"scaleX",
-                0.58f,
-                1f);
-        mDataBinding.hintText2.setPivotX(0);//设置指定旋转中心点X坐标
-        mDataBinding.hintText2.setPivotY(0);//设置指定旋转中心点X坐标
-        mScaleX.setRepeatCount(0);
-        mScaleX.setRepeatMode(ValueAnimator.RESTART);
-
-        animatorSet.setInterpolator(new LinearInterpolator());
-        animatorSet.setDuration(2000);
-        animatorSet.playTogether(mTranslation,mScaleX);
-        animatorSet.start();
     }
 
 }

@@ -1,0 +1,2 @@
+TODO 采用的是外部拦截发 解决滑动冲突 在onInterceptTouchEvent的左右滑动的时候才把事件分发出去
+    外部拦截发 ViewPager可以不做操作

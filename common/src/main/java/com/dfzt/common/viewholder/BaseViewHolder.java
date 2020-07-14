@@ -5,11 +5,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * 通用的一个item
- * @param <T>
  * @param <V>
  */
 
-public class BaseViewHolder<T,V extends ViewDataBinding> extends RecyclerView.ViewHolder {
+public class BaseViewHolder<V extends ViewDataBinding> extends RecyclerView.ViewHolder {
     private V mDataBinding;
     public BaseViewHolder(V dataBinding) {
         super(dataBinding.getRoot());

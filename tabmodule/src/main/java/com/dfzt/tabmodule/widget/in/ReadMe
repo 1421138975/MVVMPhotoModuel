@@ -1,0 +1,4 @@
+TODO 采用内部拦截法 去解决滑动冲突 (适用于嵌套少的 嵌套多的建议使用外部拦截)
+    1.父控件拦截事件但是,down事件必须能够保证分发到子View
+    2.子View在dispatchTouchEvent的时候down先不让父控件拦截自己
+        ( getParent().requestDisallowInterceptTouchEvent(true);),然后处理属于自己的事件
