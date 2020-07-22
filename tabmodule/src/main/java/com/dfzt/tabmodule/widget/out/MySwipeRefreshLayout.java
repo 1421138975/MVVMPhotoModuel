@@ -34,9 +34,11 @@ public class MySwipeRefreshLayout extends SwipeRefreshLayout {
                 }
                 break;
             case MotionEvent.ACTION_UP:
-
+                Log.e("PPS"," ACTION_UP ");
+                setEnabled(true);
                 break;
         }
         return super.onInterceptTouchEvent(ev);
     }
+
 }

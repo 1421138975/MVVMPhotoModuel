@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <!-- CustomTabLayout 的自定义属性 -->
+    <declare-styleable name = "CustomTabLayout">
+        <!-- CustomTabView -->
+        <attr name="model" format="enum">
+            <!-- 假设里面的子view的长度不够自身的大小 就平分自身的大小 -->
+            <enum name="fill" value="0"/>
+            <!-- 每一个子View都贴着 -->
+            <enum name="warp" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <!-- CustomTabView 的自定义属性 -->
+    <declare-styleable name = "CustomTabView">
+        <!-- 默认文字的颜色 -->
+        <attr name="text_color" format="color"/>
+        <!-- 选中文字的颜色 -->
+        <attr name="select_text_color" format="color"/>
+    </declare-styleable>
+
+</resources>

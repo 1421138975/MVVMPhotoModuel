@@ -18,6 +18,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
@@ -136,7 +138,6 @@ public class TabActivity extends BaseActivity<ActivityTabBinding> {
                 }else if (scrollY > 0 && flag){
                     //向下滑动 宽度拉大
                     mTranslationAnim(scrollY,false);
-
                 }
             }
         });
@@ -275,5 +276,7 @@ public class TabActivity extends BaseActivity<ActivityTabBinding> {
         animatorSet.playTogether(mTranslation,mScaleX);
         animatorSet.start();
     }
+
+
 
 }
