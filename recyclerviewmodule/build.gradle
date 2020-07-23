@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         if (project.ext.runAsApp) {
-            applicationId "com.dfzt.custommodule"
+            applicationId "com.dfzt.recyclerviewmodule"
         }
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion

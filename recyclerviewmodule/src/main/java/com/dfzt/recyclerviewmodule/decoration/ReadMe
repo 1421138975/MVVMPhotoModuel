@@ -1,0 +1,15 @@
+TODO  使用RecyclerView 实现吸顶效果
+这个功能其实就是利用RecyclerView的分界线来处理的
+一般ItemDecoration这个方法
+   有3个方法需要重写
+   onDraw
+    这个绘制是在 itemview绘制之前绘制
+
+
+   onDrawOver //TODO 吸顶效果就是在这个里面去实现
+    这个绘制是在 itemview绘制之后绘制
+
+   getItemOffsets
+        这个方法设置分割线的每个方向的大小
+        outRect.set(0, 1, 0, 0); //依次是 左  上 右 下
+
