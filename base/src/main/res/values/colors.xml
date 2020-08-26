@@ -7,4 +7,5 @@
     <color name="yellow">#FFFF00</color>
     <color name="hint_bg">#C02020</color>
     <color name="text_color">#CCCCFF </color>
+    <color name="drag_rect_color">#88FF9966  </color>
 </resources>

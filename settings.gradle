@@ -1,2 +1,2 @@
-include ':app', ':base', ':network', ':common', ':tabmodule', ':custommodule', ':recyclerviewmodule'
+include ':app', ':base', ':network', ':common', ':tabmodule', ':custommodule', ':recyclerviewmodule', ':bitmapmodule'
 rootProject.name='MVVMPhotoActivity'

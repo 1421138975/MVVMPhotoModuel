@@ -27,6 +27,7 @@ public class ImageViewAdapter {
     public static void setSrc(ImageView imageView, String url) {
         Glide.with(imageView.getContext()).load(url)
                 .placeholder(R.mipmap.default_cover)
+                .error(R.mipmap.default_cover)
                 .into(imageView);
     }
 

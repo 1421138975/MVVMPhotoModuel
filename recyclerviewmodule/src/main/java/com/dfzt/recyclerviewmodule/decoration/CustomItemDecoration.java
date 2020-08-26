@@ -22,9 +22,11 @@ public class CustomItemDecoration extends RecyclerView.ItemDecoration {
     private Paint headPaint;
     private Rect textRect;
     private Context mContext;
+
+    private View nextGrupFirstItem;
     public CustomItemDecoration(Context mContext){
         this.mContext = mContext;
-        groupHeadHeight = DensityUtils.dip2px(mContext,50);
+        groupHeadHeight = DensityUtils.dip2px(mContext,60);
         headPaint = new Paint();
         headPaint.setColor(Color.RED);
         headPaint.setAntiAlias(true);
@@ -78,7 +80,6 @@ public class CustomItemDecoration extends RecyclerView.ItemDecoration {
             DataRecyclerAdapter mAdapter = (DataRecyclerAdapter) parent.getAdapter();
             //获取可见区域的第一个view的item
             int position = ((LinearLayoutManager) parent.getLayoutManager()).findFirstVisibleItemPosition();
-            Log.e("PPS","position ==== "  +position);
             //获取可见区域的第一个itemview
             View itemView = parent.findViewHolderForAdapterPosition(position).itemView;
             //获取左右的距离
@@ -87,9 +88,54 @@ public class CustomItemDecoration extends RecyclerView.ItemDecoration {
             int top = parent.getPaddingTop();
             //表示下一个item是一个新的组 需要网上滑动
             boolean groupHead = mAdapter.isGroupHead(position + 1);
-            if (groupHead ){
+            /**
+             *  这种情况表示的是当前的吸顶的这个大小比一个item的高度还要大的时候 这个时候就出现 groupHead = false
+             *  你吸顶的view 覆盖了至少2个item 你position + 1 = false
+             *  这种情况你就要判断这个吸顶的view最在吸顶和下一组要吸顶的时候覆盖了几个item
+             *  这个时候就多去寻找几次(吸顶的view 的高度 / itemView的高度 + 1 ) 知道找到了需要吸顶的item
+             *  然后计算要吸顶的item的getop 距离头部的距离 - 吸顶的view 的高度 - parent.getPaddingTop() <= 吸顶的view 的高度
+             *  并且大于0  这个时候才让他进行滑动隐藏
+             */
+
+            if (groupHeadHeight > itemView.getHeight() && !groupHead){
+                int maxHintSize = groupHeadHeight / itemView.getHeight() + 1;
+                int index = position + 1;
+                int height = itemView.getHeight();
+                while (index < maxHintSize + position + 1){
+                    index++;
+                    boolean findGroupHead = mAdapter.isGroupHead(index);
+                    View childView = parent.findViewHolderForAdapterPosition(index).itemView;
+                    height += childView.getHeight();
+                    if (findGroupHead){
+                        nextGrupFirstItem = parent.findViewHolderForAdapterPosition(index).itemView;
+                        break;
+                    }else {
+                        nextGrupFirstItem = null;
+                    }
+                }
+            }
+
+            boolean hasScrollTop = false;
+            int maxScrollHeight = 0;
+            if (nextGrupFirstItem != null){
+                if (((nextGrupFirstItem.getTop() - parent.getPaddingTop() - groupHeadHeight) <= groupHeadHeight)
+                        && (nextGrupFirstItem.getTop() - parent.getPaddingTop() - groupHeadHeight) >= 0 ) {
+                    hasScrollTop = true;
+                    maxScrollHeight = nextGrupFirstItem.getTop() - parent.getPaddingTop() - groupHeadHeight;
+                }else {
+                    hasScrollTop = false;
+                }
+            }
+
+            if (groupHead || hasScrollTop){
                 c.save();
-                int bottom = Math.min(groupHeadHeight,itemView.getBottom() - parent.getPaddingTop());
+                int bottom = 0;
+                if (hasScrollTop){
+                    bottom = maxScrollHeight;
+                }else if (groupHead){
+                    bottom = Math.min(groupHeadHeight,itemView.getBottom() - parent.getPaddingTop());
+                }
+
                 //裁剪当前画布 让 文字绘制只能在这个画布中画  超过了就不显示
                 c.clipRect(left,top,right,top + bottom);
                 //移动的距离慢慢减少

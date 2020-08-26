@@ -1,6 +1,11 @@
 package com.dfzt.base.activity;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkInfo;
+import android.net.NetworkRequest;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -21,6 +26,9 @@ import androidx.databinding.ViewDataBinding;
 public abstract class BaseActivity<V extends ViewDataBinding> extends AppCompatActivity {
     protected Context mContext;
     protected V mDataBinding;
+    public static final int NET_ERROR = -1;
+    public static final int NET_MOBILE = 1;
+    public static final int NET_WIFI = 2;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,4 +63,6 @@ public abstract class BaseActivity<V extends ViewDataBinding> extends AppCompatA
     protected void initData(){
 
     }
+
+
 }

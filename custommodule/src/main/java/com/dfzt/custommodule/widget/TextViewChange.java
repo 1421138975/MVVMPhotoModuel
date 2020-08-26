@@ -97,7 +97,7 @@ public class TextViewChange extends AppCompatTextView {
         float mTextWidth = mPaint.measureText(mText);
         //获取文字的高度
         Paint.FontMetrics metrics = mPaint.getFontMetrics();
-        //                  基准线往下 +值      基准线往下 -值
+        //                  基准线往下 +值      基准线往上 -值
         float mTextHeight = metrics.descent - metrics.ascent;
 
         int left = (int) (((getWidth() - mTextWidth) / 2) + mTextWidth * mPerernt);
@@ -147,5 +147,17 @@ public class TextViewChange extends AppCompatTextView {
         canvas.clipRect(mRect);
 
         canvas.drawText(mText,left ,(getHeight() - metrics.descent - metrics.ascent) /2,mPaint);
+    }
+
+    //这个View刚被添加到视图中
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+    }
+
+    //这个view被视图移除
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
     }
 }

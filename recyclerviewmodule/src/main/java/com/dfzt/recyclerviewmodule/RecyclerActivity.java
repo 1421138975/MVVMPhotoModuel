@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -65,8 +66,10 @@ public class RecyclerActivity extends BaseActivity<ActivityMainBinding> {
             public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
 
                 if (e.getY() > itemDecoration.getGroupHeadHeight() + rv.getPaddingTop()){
+                    //不拦截这次事件
                    return false;
                 }else {
+                    //拦截这次事件
                     return true;
                 }
 
@@ -86,9 +89,10 @@ public class RecyclerActivity extends BaseActivity<ActivityMainBinding> {
             @Override
             public void onItemClickListener(int position) {
                 //获取可见区域的第一个view的item
-                if (isNeedClick) {
+                //if (isNeedClick) {
                     Toast.makeText(mContext, mList.get(position).getName(), Toast.LENGTH_SHORT).show();
-               }
+               //}
+                startActivity(new Intent(mContext,GridActivity.class));
             }
         });
     }
@@ -106,9 +110,7 @@ public class RecyclerActivity extends BaseActivity<ActivityMainBinding> {
                 }
             }
         }
-        for (int i = 0; i < 50; i++){
 
-        }
 
         Collections.sort(mList, new Comparator<DataBean>() {
             @Override

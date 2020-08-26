@@ -9,17 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ClearActivity">
+        <activity android:name=".SlidingActivity"></activity>
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TestActivity">
-
-        </activity>
-        <activity android:name=".CustomTabActivity"></activity>
+        <activity android:name=".ClearActivity"></activity>
+        <activity android:name=".TestActivity" />
+        <activity android:name=".CustomTabActivity" />
         <activity android:name=".MainActivity" />
     </application>
 

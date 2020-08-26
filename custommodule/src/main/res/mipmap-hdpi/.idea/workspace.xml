@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2a58727f-692b-4e3d-98a4-37907a1871d0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../java/com/dfzt/custommodule/SlidingActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/dfzt/custommodule/SplashActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/dfzt/custommodule/widget/SlidingView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_sliding.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sild_back.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sild_back2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sild_back3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sild_back4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../recyclerviewmodule/src/main/java/com/dfzt/recyclerviewmodule/GridActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../recyclerviewmodule/src/main/java/com/dfzt/recyclerviewmodule/adapter/DataRecyclerAdapter2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../recyclerviewmodule/src/main/java/com/dfzt/recyclerviewmodule/decoration/CustomGridItemDecoration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../recyclerviewmodule/src/main/res/layout/activity_grild.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../recyclerviewmodule/src/main/res/layout/data_recycler_item2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../base/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../base/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../base/src/main/java/com/dfzt/base/activity/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../base/src/main/java/com/dfzt/base/activity/BaseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../base/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../base/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../common/src/main/java/com/dfzt/common/imageview/ImageViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../common/src/main/java/com/dfzt/common/imageview/ImageViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/dfzt/custommodule/widget/TextViewChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/dfzt/custommodule/widget/TextViewChange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../network/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../network/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../recyclerviewmodule/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../recyclerviewmodule/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../recyclerviewmodule/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../recyclerviewmodule/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../recyclerviewmodule/src/main/java/com/dfzt/recyclerviewmodule/RecyclerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../recyclerviewmodule/src/main/java/com/dfzt/recyclerviewmodule/RecyclerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../recyclerviewmodule/src/main/java/com/dfzt/recyclerviewmodule/decoration/CustomItemDecoration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../recyclerviewmodule/src/main/java/com/dfzt/recyclerviewmodule/decoration/CustomItemDecoration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../recyclerviewmodule/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../recyclerviewmodule/src/main/res/layout/activity_main.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a58727f-692b-4e3d-98a4-37907a1871d0" name="Default Changelist" comment="" />
+      <created>1595834484848</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595834484848</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.32990354" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Resources Explorer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="ASM" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Palette&#9;" />
+    </layout>
+  </component>
+</project>

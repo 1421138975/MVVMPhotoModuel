@@ -75,6 +75,7 @@ public class ClearDrawable extends Drawable {
     private int mPointMoveSize = 0;
     //勾勾长度的百分比
     private float mGGSzie = 0;
+    PointF ggPointF = null;
     public ClearDrawable( Context mContext){
         this.mContext = mContext;
         mPaint = new Paint();
@@ -131,7 +132,6 @@ public class ClearDrawable extends Drawable {
         if (STATE == POINT_MOVE_END){
             //画勾勾
             //勾勾转折点的坐标 mPointF.x,mPointF.y + mPointMoveSize
-            PointF ggPointF = null;
             if (ggPointF == null){
                 ggPointF = new PointF(mPointF.x,mPointF.y + mPointMoveSize);
             }
